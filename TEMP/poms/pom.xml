@@ -15,6 +15,7 @@
     <module>jobs/routes/demoroute_0.1</module>
     <module>jobs/routes/multicastroute_0.1</module>
     <module>jobs/routes/calldijob_0.1</module>
+    <module>jobs/process/processbook_0.1</module>
   </modules>
   <properties>
     <signer.version>7.3.1</signer.version>
