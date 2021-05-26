@@ -45,7 +45,7 @@
     <talend.job.stat>true</talend.job.stat>
     <talend.pigudf.groupid>org.example.temp.pigudf</talend.pigudf.groupid>
     <talend.job.framework></talend.job.framework>
-    <talend.job.jvmargs>-Xms256M -Xmx1024M </talend.job.jvmargs>
+    <talend.job.jvmargs>-Xms256M -Xmx1024M -Dfile.encoding=UTF-8 </talend.job.jvmargs>
     <talend.job.type>Standard</talend.job.type>
     <item.project.name>@ItemProjectName@</item.project.name>
     <resources.path>${basedir}/src/main/resources</resources.path>
@@ -74,13 +74,28 @@
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
+      <artifactId>camel-core-2.24.2</artifactId>
+      <version>6.0.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
       <artifactId>camel-cxf-2.24.2</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
+      <artifactId>camel-cxf-2.24.2</artifactId>
+      <version>6.0.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
       <artifactId>camel-spring-2.24.2</artifactId>
       <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>camel-spring-2.24.2</artifactId>
+      <version>6.0.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>commons-logging</groupId>
@@ -168,6 +183,11 @@
       <groupId>org.talend.libraries</groupId>
       <artifactId>spring-context-5.1.4.RELEASE</artifactId>
       <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>spring-context-5.1.4.RELEASE</artifactId>
+      <version>6.0.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
@@ -370,9 +390,6 @@
     </profile>
     <profile>
       <id>include-running-log4j</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
       <properties>
         <log4j.running.dir>${current.resources.dir}/</log4j.running.dir>
       </properties>
