@@ -200,6 +200,16 @@
       <artifactId>beans</artifactId>
       <version>7.3.1</version>
     </dependency>
+    <dependency>
+      <groupId>org.example.temp.job</groupId>
+      <artifactId>processMovie</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.temp.job</groupId>
+      <artifactId>processBook</artifactId>
+      <version>0.1.0</version>
+    </dependency>
   </dependencies>
   <build />
   <profiles>
