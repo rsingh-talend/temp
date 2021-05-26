@@ -17,6 +17,7 @@
     <module>jobs/routes/calldijob_0.1</module>
     <module>jobs/process/processbook_0.1</module>
     <module>jobs/process/processmovie_0.1</module>
+    <module>jobs/process/restwebservice_0.1</module>
   </modules>
   <properties>
     <signer.version>7.3.1</signer.version>
