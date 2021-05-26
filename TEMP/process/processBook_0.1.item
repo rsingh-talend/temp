@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendXMLMap="http://www.talend.org/xmlmap" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default"/>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:ae1oMIXLh7dLZSLQf4tXlez04vI2sfuFRaBidOLJ"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:ZUL+D0bc43hb20vBfw1koYQ9H6MMDLOeEmHJSEw7"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:QP8H131MKjBUx+uyRf8PTF+TkPal9u7qG/lMrbJQ"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:VPeSrf6tSyOAcjwh4gpYVLK/tAjHRnsu6g0SuMx+"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -123,30 +123,96 @@
       <column defaultValue="" key="false" length="0" name="body" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Document" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="480" posY="192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tXMLMap_1"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="false"/>
+    <elementParameter field="CHECK" name="KEEP_ORDER_FOR_DOCUMENT" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="book" name="book">
+      <column comment="" key="false" length="-1" name="body" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Document" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="title" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendXMLMap:XmlMapData">
+      <inputTrees lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row1">
+        <nodes expression="" name="body" type="id_Document" xpath="row1/body">
+          <children loop="true" main="true" name="item" type="id_String" xpath="row1.body:/item">
+            <children name="type" nodeType="ATTRIBUT" type="id_String" xpath="row1.body:/item/@type"/>
+            <children name="ASIN" nodeType="ATTRIBUT" outgoingConnections="//@node.1/@nodeData/@connections.0" type="id_String" xpath="row1.body:/item/@ASIN"/>
+            <children name="title" outgoingConnections="//@node.1/@nodeData/@connections.1 //@node.1/@nodeData/@connections.8" type="id_String" xpath="row1.body:/item/title"/>
+            <children name="author" outgoingConnections="//@node.1/@nodeData/@connections.2" type="id_String" xpath="row1.body:/item/author"/>
+            <children name="releaseDate" outgoingConnections="//@node.1/@nodeData/@connections.3" type="id_String" xpath="row1.body:/item/releaseDate"/>
+            <children name="pages" outgoingConnections="//@node.1/@nodeData/@connections.4" type="id_Integer" xpath="row1.body:/item/pages"/>
+            <children name="publisher" outgoingConnections="//@node.1/@nodeData/@connections.5" type="id_String" xpath="row1.body:/item/publisher"/>
+            <children name="price" outgoingConnections="//@node.1/@nodeData/@connections.6" type="id_Float" xpath="row1.body:/item/price"/>
+            <children name="itemType" outgoingConnections="//@node.1/@nodeData/@connections.7" type="id_String" xpath="row1.body:/item/itemType"/>
+          </children>
+        </nodes>
+      </inputTrees>
+      <outputTrees name="book">
+        <nodes expression="" name="body" pattern="" type="id_Document" xpath="book/body">
+          <children loop="true" main="true" name="book" type="id_String" xpath="book.body:/book" xsi:type="TalendXMLMap:OutputTreeNode">
+            <children expression="[row1.body:/item/@ASIN]" incomingConnections="//@node.1/@nodeData/@connections.0" name="ASIN" type="id_String" xpath="book.body:/book/ASIN" xsi:type="TalendXMLMap:OutputTreeNode"/>
+            <children expression="[row1.body:/item/title]" incomingConnections="//@node.1/@nodeData/@connections.1" name="title" type="id_String" xpath="book.body:/book/title" xsi:type="TalendXMLMap:OutputTreeNode"/>
+            <children expression="[row1.body:/item/itemType]" incomingConnections="//@node.1/@nodeData/@connections.7" name="itemType" type="id_String" xpath="book.body:/book/itemType" xsi:type="TalendXMLMap:OutputTreeNode"/>
+            <children expression="[row1.body:/item/author]" incomingConnections="//@node.1/@nodeData/@connections.2" name="author" type="id_String" xpath="book.body:/book/author" xsi:type="TalendXMLMap:OutputTreeNode"/>
+            <children expression="[row1.body:/item/releaseDate]" incomingConnections="//@node.1/@nodeData/@connections.3" name="releaseDate" type="id_String" xpath="book.body:/book/releaseDate" xsi:type="TalendXMLMap:OutputTreeNode"/>
+            <children expression="[row1.body:/item/pages]" incomingConnections="//@node.1/@nodeData/@connections.4" name="pages" type="id_Integer" xpath="book.body:/book/pages" xsi:type="TalendXMLMap:OutputTreeNode"/>
+            <children expression="[row1.body:/item/publisher]" incomingConnections="//@node.1/@nodeData/@connections.5" name="publisher" type="id_String" xpath="book.body:/book/publisher" xsi:type="TalendXMLMap:OutputTreeNode"/>
+            <children expression="[row1.body:/item/price]" incomingConnections="//@node.1/@nodeData/@connections.6" name="price" type="id_Float" xpath="book.body:/book/price" xsi:type="TalendXMLMap:OutputTreeNode"/>
+          </children>
+        </nodes>
+        <nodes expression="[row1.body:/item/title]" incomingConnections="//@node.1/@nodeData/@connections.8" name="title" type="id_String" xpath="book/title"/>
+      </outputTrees>
+      <varTables minimized="true" name="Var"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.1" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.0" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.2" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.1" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.3" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.3" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.4" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.4" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.5" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.5" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.6" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.6" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.7" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.7" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.8" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.2" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.2" target="//@node.1/@nodeData/@outputTrees.0/@nodes.1" xsi:type="TalendXMLMap:Connection"/>
+    </nodeData>
+  </node>
   <node componentName="tRouteOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRouteOutput_1"/>
-    <elementParameter field="TABLE" name="VALUES"/>
+    <elementParameter field="TABLE" name="VALUES">
+      <elementValue elementRef="SCHEMA_COLUMN" value="body"/>
+      <elementValue elementRef="TYPE" value="Body"/>
+      <elementValue elementRef="VALUE" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="title"/>
+      <elementValue elementRef="TYPE" value="Header"/>
+      <elementValue elementRef="VALUE" value="&quot;title&quot;"/>
+    </elementParameter>
     <elementParameter field="LABEL" name="NOTICE" value="The &quot;Name&quot; with &quot;Body&quot; type will be ignored"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tRouteOutput_1"/>
+    <metadata connector="FLOW" label="book" name="tRouteOutput_1">
+      <column comment="" key="false" length="-1" name="body" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Document" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="title" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
+    </metadata>
   </node>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tRouteInput_1" offsetLabelX="0" offsetLabelY="0" source="tRouteInput_1" target="tXMLMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="FLOW" label="book" lineStyle="0" metaname="book" offsetLabelX="0" offsetLabelY="0" source="tXMLMap_1" target="tRouteOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="book"/>
+  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRouteInput_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRouteOutput_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f2c23b2e-07dd-4e24-87d2-95a0831d69a4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>uaD4Jlil+CbfdZbI45YH+p63gNmmYdsBzVl9yyt5lUmAAidQlePQ0n7S6MDy6v5xp0D4DKJNfSk5&#13;
-3qsJSYVktw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f303c87e-bc02-4895-8f52-8c41bc61456d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>b9iJlnqXIA/gOMQXnYGp0cQev3NpEfZUOZLs5oTyjTbCerdAzG2vYp4033Ez/KWB0k45t/GdBCiG&#13;
-9El3UoY82w==</DigestValue></Reference></SignedInfo><SignatureValue>Z/2CYp1Nj9GHlgutpVCJitUkipTz2wJw8V4plBIi8pG01R2kvOsoEy35SbZzX8AqIo1U8aTayqDL&#13;
-XRe1WXJ/6AX6Ug79YwO2BG+F1ToeS4HjW9RsC/A7aqqj93hGd0NR+NSK6W293f2tru9owMlQLdfb&#13;
-uuo2S0BrLMGhIm503Nw+r7eoV8+LuHn5LG8Z9L3BJwtF5pmZ1VeESh/t41VOwhrsdxHlpkYAmuin&#13;
-RRsoOfAQysOoXop/wf9pZiaXHJxLMecDEL1XEybRhhhXgy+xjYua2MY/spK7ok/1lqkCs8DrkMJz&#13;
-/p0i0zso0m3aQUmAhZg3uNnIrGh3NAMbr6vvrg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6d84a769-c467-4083-8fae-7a8df60868b8"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rfMtoOc7bcqHFEzogDfGmTxSarhzdZvZSH5WBV/cb4hGfyfZGBXzclyroEO8lbehdvmkcQZcUOev&#13;
+8S1Rzh5GQA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5b84a379-15ef-478c-8380-eca080a86aa5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BYUXm3XbYpA9SWfYfn4zsJ8spHCf3AKNhM5RvN+ebqLDkmx88QABefn3xRLRUHB61CBz5FtonWeY&#13;
+PpwZnwRXKg==</DigestValue></Reference></SignedInfo><SignatureValue>NOK5WzWEnGQqK1+mvAEaHSTsZQRuy2/TRc51jt1kDBkBKXXzJcScjPeQftJbBFpm3kChMup6td+o&#13;
+abG2/XQ/PPmhDxicitUaqgxtSno3TAFPHy7NM4EgytwLFeu4LBQKg9gAonXxQxmX/vkb2yQwm6j8&#13;
+MgdYnYe+tJPSh9Qgg+z4w3X2p/iO1r1bbFr1jZZQXz3BVZBXcHh9KkYgdAjmhgbx9mavKbQwBi7k&#13;
+DnCuMewdMALgceYYjiyDM+ra7wahmoeM78dKdk34edB5obm5O1XpcFGnxeXpjvA7vNmNHaD+IvZD&#13;
+0et4dkUh4HitGmORz3OrpPqAhgmtoYGia1+ebA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -168,4 +234,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f303c87e-bc02-4895-8f52-8c41bc61456d" Target="#_f2c23b2e-07dd-4e24-87d2-95a0831d69a4"><Timestamp>2021-05-26 15:39:00</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5b84a379-15ef-478c-8380-eca080a86aa5" Target="#_6d84a769-c467-4083-8fae-7a8df60868b8"><Timestamp>2021-05-26 15:49:29</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
