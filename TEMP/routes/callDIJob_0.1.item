@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:id="_EEMLAL43EeuN060okCkCow" xmi:version="2.0">
+  <context confirmationNeeded="false" name="Default" xmi:id="_EEMLAb43EeuN060okCkCow"/>
+  <parameters xmi:id="_EEMLAr43EeuN060okCkCow">
+    <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value="" xmi:id="_EEMLA743EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value="" xmi:id="_EEMLBL43EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value="" xmi:id="_EEMLBb43EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_VERSION" show="false" value="" xmi:id="_EEMLBr43EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_KERBEROS" show="false" value="" xmi:id="_EEMLB743EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" show="false" value="" xmi:id="_EEMLCL43EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_USERNAME" show="false" value="" xmi:id="_EEMLCb43EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_GROUP" show="false" value="" xmi:id="_EEMLCr43EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_USE_KEYTAB" show="false" value="" xmi:id="_EEMLC743EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_KT_PRINCIPAL" show="false" value="" xmi:id="_EEMLDL43EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_KEY_TAB" show="false" value="" xmi:id="_EEMLDb43EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" show="false" value="" xmi:id="_EEMLDr43EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_END_POINT" show="false" value="" xmi:id="_EEMLD743EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" show="false" value="" xmi:id="_EEMLEL43EeuN060okCkCow"/>
+    <elementParameter field="TEXT" name="OOZIE_END_POINT" show="false" value="" xmi:id="_EEMLEb43EeuN060okCkCow"/>
+    <routinesParameter id="_lOT6oLSAEeumWJP29lME6g" name="DQTechnical" xmi:id="_EEMLEr43EeuN060okCkCow"/>
+    <routinesParameter id="_lOBmwLSAEeumWJP29lME6g" name="DataMasking" xmi:id="_EEMLE743EeuN060okCkCow"/>
+    <routinesParameter id="_lKhm0LSAEeumWJP29lME6g" name="DataOperation" xmi:id="_EEMLFL43EeuN060okCkCow"/>
+    <routinesParameter id="_lOKJoLSAEeumWJP29lME6g" name="DataQualityDependencies" xmi:id="_EEMLFb43EeuN060okCkCow"/>
+    <routinesParameter id="_lOGfQLSAEeumWJP29lME6g" name="DataQuality" xmi:id="_EEMLFr43EeuN060okCkCow"/>
+    <routinesParameter id="_lOPpMLSAEeumWJP29lME6g" name="DqStringHandling" xmi:id="_EEMLF743EeuN060okCkCow"/>
+    <routinesParameter id="_lNYGgLSAEeumWJP29lME6g" name="Mathematical" xmi:id="_EEMLGL43EeuN060okCkCow"/>
+    <routinesParameter id="_lNc_ALSAEeumWJP29lME6g" name="Numeric" xmi:id="_EEMLGb43EeuN060okCkCow"/>
+    <routinesParameter id="_lNhQcLSAEeumWJP29lME6g" name="Relational" xmi:id="_EEMLGr43EeuN060okCkCow"/>
+    <routinesParameter id="_lN98YLSAEeumWJP29lME6g" name="SQLike" xmi:id="_EEMLG743EeuN060okCkCow"/>
+    <routinesParameter id="_lNk60LSAEeumWJP29lME6g" name="StringHandling" xmi:id="_EEMLHL43EeuN060okCkCow"/>
+    <routinesParameter id="_lNpzULSAEeumWJP29lME6g" name="TalendDataGenerator" xmi:id="_EEMLHb43EeuN060okCkCow"/>
+    <routinesParameter id="_lNuEwLSAEeumWJP29lME6g" name="TalendDate" xmi:id="_EEMLHr43EeuN060okCkCow"/>
+    <routinesParameter id="_lN5q8LSAEeumWJP29lME6g" name="TalendStringUtil" xmi:id="_EEMLH743EeuN060okCkCow"/>
+    <routinesParameter id="_lNyWMLSAEeumWJP29lME6g" name="TalendString" xmi:id="_EEMLIL43EeuN060okCkCow"/>
+  </parameters>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_15b032e7-a3eb-45a0-81d3-1c19ecb6e844"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>w86yX7U8IuBOXZFVD5mylsq7eQcuA3hj6aHlsbduMgE/i67KYttwcwsor4wrmI++4X5/+QbhB9Fo&#13;
+1BF0lsll1Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8d946592-d46a-4ddc-94da-b67069c5d913"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>cy1aAXJF2R22VaprYyDE1Cx3B65YVvG/F0y6zPe5OmuOu3HyXq+Aj9a5SXQwGjdz7lAoDItKoe2B&#13;
+m3JuNSaSPA==</DigestValue></Reference></SignedInfo><SignatureValue>YWzss/TIPsPgRdj6E2GliY0zaXphruzpg9ctsKv76L3d6rbDPdnEKlt5i5xwNpUJV8cOoCVcVt5B&#13;
++L6JTPhf6WkqKc4lFnv2Phi6i5NWFTh984YdIKKFH9kOQ+BY+uheheEMA7+vixJgJ/C8wQ4VFY+N&#13;
+5PjeEvF2CJB7++4jdQH39DpPkcbtQkYAgdzbI4Kq67h+8vMRpPFmQnRJhSDcX6Iko16byLQlvZRo&#13;
+fuj5RFysYlmCFYoiZqoX0o3YqHAbUNOttLNM0srvAChoam6tOvTxoUd9Sfk5k3fyRCMOXcsuQu9p&#13;
+Q5gs1/u0gAVzk8w9UmYHaNe2PpWK2r5XEQ8aQg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
+VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
+QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
+YWxlbmQgQ29kZSBTaWduaW5nIGNlcnRpZmljYXRlMQwwCgYDVQQLDANSJkQxFDASBgNVBAoTC1Rh&#13;
+bGVuZCBJbmMuMQ4wDAYDVQQHEwVQYXJpczEOMAwGA1UECBMFUGFyaXMxCzAJBgNVBAYTAkZSMIIB&#13;
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp5TMF8BmRt8dY51t9kIDdDkoOKVVytJN2gn2&#13;
+DhMGi8hzpUofNDykJDhe9SPqyJdGZ6o/h7laTA0/CivKyPT1OJQ9E2gMHKs8cTZM/cO2w0Atlqkl&#13;
+alIxepol0DNnUtmECVBqdnVsJesfmdoeptxgJAtxYbquFsTsrATNY2cscXpwmOca/Ewip48WQLFx&#13;
+e5s067jaIsAQGRIqpIup3bOtWBySrtImJ40lQCPeEcl96qzkv3utaVaNc3ukkhYkCDbMbK8NVd1B&#13;
+CVeeIBAe+n/SdpHH20o+6eIiZecsBGDLwlTYrFvuVqAa6xI7y8Vdz6irjPAVBEtG/iOc782aJ/lZ&#13;
+TwIDAQABo3UwczAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF&#13;
+BQcDAzAdBgNVHQ4EFgQUGdfzQEbjQnANq28sfhEMTx+rsOcwHwYDVR0jBBgwFoAU530Lcvy1gZnG&#13;
+gCvZLOyCczK1qPcwDQYJKoZIhvcNAQELBQADggIBAEr22wnaQwZm2dhbUCqD+qZpTq2AF/tzxqAM&#13;
+eL/CiTjPbTblS4SNNwCKvTgMe9ucpUbenXmK7xE+DU9dN4om+t3VHbkOLQVyuLcd2WGsy7ZGwRvA&#13;
+f+TFwLbwjyTukOGm6Sd1qyZgvCPzBsKnft6vscvGy2yEpmFCeHJyBP8pvchg607zguRdNbkGYZXw&#13;
+G6jNipAbTtzdPTFKKr1bEf0sUGqMrlZIMPjflh2Vewu8ImNdX5IZdvBD6DdFVOC5wqV6u+W9ukE/&#13;
+mXZxDBYNl2AF7FTh04ucEVN3mHv7m2L0uFvUlhxchcagJhJsdQG+A0LVCemHbp6CSNQJx02KxqUG&#13;
+hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13;
+WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
+gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
+qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8d946592-d46a-4ddc-94da-b67069c5d913" Target="#_15b032e7-a3eb-45a0-81d3-1c19ecb6e844"><Timestamp>2021-05-26 15:28:47</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
