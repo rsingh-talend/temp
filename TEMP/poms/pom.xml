@@ -13,7 +13,7 @@
     <module>code/beans</module>
     <module>jobs/process/demo_0.1</module>
     <module>jobs/routes/demoroute_0.1</module>
-    <module>jobs/routes/routingslip_0.1</module>
+    <module>jobs/routes/multicastroute_0.1</module>
   </modules>
   <properties>
     <signer.version>7.3.1</signer.version>

@@ -4,19 +4,19 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.example.temp.route</groupId>
-    <artifactId>RoutingSlip-Kar</artifactId>
+    <artifactId>MulticastRoute-Kar</artifactId>
     <version>0.1.0</version>
     <relativePath>/</relativePath>
   </parent>
   <groupId>org.example.temp.route</groupId>
-  <artifactId>RoutingSlip</artifactId>
+  <artifactId>MulticastRoute</artifactId>
   <version>0.1.0</version>
-  <name>TEMP RoutingSlip-${project.version} (0.1,Routes) Bundle</name>
+  <name>TEMP MulticastRoute-${project.version} (0.1,Routes) Bundle</name>
   <properties>
     <item.name>@ItemName@</item.name>
     <bundle.config.export.service>@BundleConfigExportService@</bundle.config.export.service>
     <bundle.config.bundle.classpath>@BundleConfigBundleClasspath@</bundle.config.bundle.classpath>
-    <talend.job.name>RoutingSlip</talend.job.name>
+    <talend.job.name>MulticastRoute</talend.job.name>
     <current.test.resources.dir>${basedir}/src/test/resources</current.test.resources.dir>
     <current.resources.dir>${basedir}/src/main/ext-resources</current.resources.dir>
     <talend.project.name>TEMP</talend.project.name>

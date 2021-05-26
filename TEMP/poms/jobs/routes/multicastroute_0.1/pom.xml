@@ -9,10 +9,10 @@
     <relativePath>../../../</relativePath>
   </parent>
   <groupId>org.example.temp.route</groupId>
-  <artifactId>RoutingSlip-Kar</artifactId>
+  <artifactId>MulticastRoute-Kar</artifactId>
   <version>0.1.0</version>
   <packaging>pom</packaging>
-  <name>TEMP RoutingSlip-${project.version} (0.1,Routes) Kar</name>
+  <name>TEMP MulticastRoute-${project.version} (0.1,Routes) Kar</name>
   <modules>
     <module>pom-bundle.xml</module>
     <module>pom-feature.xml</module>
