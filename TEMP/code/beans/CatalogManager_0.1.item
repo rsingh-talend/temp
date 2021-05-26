@@ -2,7 +2,7 @@ package beans;
 import org.apache.camel.Exchange; 
 import org.apache.camel.Header; 
 
-public class CatalogueManager {
+public class CatalogManager {
 
 	private static int USID = 10009374;
 	private static int EUID = 20008105;
